@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201511281936267_AddProductImageUrl.Designer.cs">
       <DependentUpon>201511281936267_AddProductImageUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511282151248_TransactionValue.cs" />
+    <Compile Include="Migrations\201511282151248_TransactionValue.Designer.cs">
+      <DependentUpon>201511282151248_TransactionValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281936267_AddProductImageUrl.resx">
       <DependentUpon>201511281936267_AddProductImageUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511282151248_TransactionValue.resx">
+      <DependentUpon>201511282151248_TransactionValue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

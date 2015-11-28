@@ -13,11 +13,30 @@ namespace LojaDesafio.Business
     {
         public TransactionBusiness(Context context) : base(context) { }
 
+        public Transaction SelectById(int id)
+        {
+            Transaction transaction = null;
+
+            using (this.Context)
+            {
+                transaction = this.Context.Transactions.FirstOrDefault(t => t.Id == id);
+            }
+
+            return transaction;
+        }
+
         public Transaction Save(Transaction transaction)
         {
             using (this.Context)
             {
                 this.Validate(transaction);
+
+                foreach (TransactionProduct tp in transaction.TransactionProducts)
+                {
+                    Product product = this.Context.Products.FirstOrDefault(p => p.Id == tp.Product.Id);
+
+                    transaction.Value += tp.Quantity * product.Price;
+                }
 
                 this.Context.Transactions.Add(transaction);
 
@@ -60,12 +79,13 @@ namespace LojaDesafio.Business
                     errors.Add("Invalid product quantity in transaction.");
                 }
 
-                //ProductBusiness pbo = (ProductBusiness)BusinessFactory.GetInstance().Get<Product>(this.Context);
-
-                //if (transaction.TransactionProducts.Count(tp => pbo.SelectById(tp.ProductId) == null) == 0)
-                //{
-                //    errors.Add("Invalid product in transaction.");
-                //}
+                foreach (TransactionProduct tp in transaction.TransactionProducts)
+                {
+                    if (this.Context.Products.Count(p => p.Id == tp.ProductId) == 0)
+                    {
+                        errors.Add("Invalid product in transaction.");
+                    }
+                }
             }
 
             if (errors.Count > 0)

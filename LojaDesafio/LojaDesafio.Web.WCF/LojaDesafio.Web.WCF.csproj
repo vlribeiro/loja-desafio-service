@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILojaDesafio.cs" />
+    <Compile Include="Infrastructure\ApiResponse.cs" />
     <Compile Include="LojaDesafio.svc.cs">
       <DependentUpon>LojaDesafio.svc</DependentUpon>
     </Compile>

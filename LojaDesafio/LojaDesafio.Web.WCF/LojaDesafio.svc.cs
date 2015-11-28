@@ -7,6 +7,7 @@ using System.Text;
 using LojaDesafio.Model;
 using LojaDesafio.Business;
 using LojaDesafio.Business.Infrastructure;
+using LojaDesafio.Web.WCF.Infrastructure;
 
 namespace LojaDesafio.Web.WCF
 {
@@ -23,6 +24,17 @@ namespace LojaDesafio.Web.WCF
             int.TryParse(id, out productId);
 
             return productBO.SelectById(productId);
+        }
+
+        public Transaction GetTransaction(string id)
+        {
+            var transactionBO = (TransactionBusiness)BusinessFactory.GetInstance().Get<Transaction>();
+
+            int transactionId = 0;
+
+            int.TryParse(id, out transactionId);
+
+            return transactionBO.SelectById(transactionId);
         }
 
         public Product PostProduct(Product product)

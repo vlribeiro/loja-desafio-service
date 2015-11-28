@@ -1,4 +1,5 @@
 ﻿using LojaDesafio.Model;
+using LojaDesafio.Web.WCF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +25,9 @@ namespace LojaDesafio.Web.WCF
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "/Transaction")]
         Transaction PostTransaction(Transaction transaction);
+
+        [OperationContract]
+        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "/Transaction/{id}")]
+        Transaction GetTransaction(string id);
     }
 }
