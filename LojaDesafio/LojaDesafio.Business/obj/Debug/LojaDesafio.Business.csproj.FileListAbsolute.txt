@@ -1,0 +1,12 @@
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\LojaDesafio.Business.dll.config
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\LojaDesafio.Business.dll
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\LojaDesafio.Business.pdb
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\EntityFramework.dll
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\LojaDesafio.Model.dll
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\LojaDesafio.Model.pdb
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\EntityFramework.xml
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\obj\Debug\LojaDesafio.Business.csprojResolveAssemblyReference.cache
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\obj\Debug\LojaDesafio.Business.dll
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Business\obj\Debug\LojaDesafio.Business.pdb
