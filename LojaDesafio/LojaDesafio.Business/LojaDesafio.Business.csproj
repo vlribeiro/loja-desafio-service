@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreditCardBusiness.cs" />
+    <Compile Include="Infrastructure\BusinessFactory.cs" />
+    <Compile Include="Infrastructure\GenericBusiness.cs" />
     <Compile Include="ProductBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionBusiness.cs" />

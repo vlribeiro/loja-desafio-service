@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +69,10 @@
     <Compile Include="Migrations\201511281310491_TransactionProductsMany2.Designer.cs">
       <DependentUpon>201511281310491_TransactionProductsMany2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511281936267_AddProductImageUrl.cs" />
+    <Compile Include="Migrations\201511281936267_AddProductImageUrl.Designer.cs">
+      <DependentUpon>201511281936267_AddProductImageUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281310491_TransactionProductsMany2.resx">
       <DependentUpon>201511281310491_TransactionProductsMany2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511281936267_AddProductImageUrl.resx">
+      <DependentUpon>201511281936267_AddProductImageUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

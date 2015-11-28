@@ -15,7 +15,7 @@ namespace LojaDesafio.Web.WCF
     {
         [OperationContract]
         [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "/Product/{id}")]
-        string GetProduct(string id);
+        Product GetProduct(string id);
 
         [OperationContract]
         [WebInvoke(Method ="POST",RequestFormat =WebMessageFormat.Json,ResponseFormat =WebMessageFormat.Json,UriTemplate ="/Product")]

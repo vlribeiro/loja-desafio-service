@@ -4,3 +4,4 @@ LojaDesafio/LojaDesafio.Business/obj/
 LojaDesafio/LojaDesafio.Model/bin/
 LojaDesafio/LojaDesafio.Model/obj/
 LojaDesafio/LojaDesafio.Web.WCF/bin/
+*.suo

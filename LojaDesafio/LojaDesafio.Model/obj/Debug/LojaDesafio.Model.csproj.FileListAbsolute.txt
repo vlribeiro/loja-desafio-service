@@ -9,6 +9,7 @@ C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.Migrations.TransactionProducts.resources
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.Migrations.TransactionProductsMany.resources
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.Migrations.TransactionProductsMany2.resources
+C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.Migrations.AddProductImageUrl.resources
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.csproj.GenerateResource.Cache
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.dll
 C:\Users\Vinícius\Documents\loja-desafio-service\LojaDesafio\LojaDesafio.Model\obj\Debug\LojaDesafio.Model.pdb

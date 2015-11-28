@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using LojaDesafio.Model;
 using LojaDesafio.Business;
+using LojaDesafio.Business.Infrastructure;
 
 namespace LojaDesafio.Web.WCF
 {
@@ -13,19 +14,29 @@ namespace LojaDesafio.Web.WCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select LojaDesafio.svc or LojaDesafio.svc.cs at the Solution Explorer and start debugging.
     public class LojaDesafio : ILojaDesafio
     {
-        public string GetProduct(string id)
+        public Product GetProduct(string id)
         {
-            return "Produto " + id;
+            var productBO = (ProductBusiness)BusinessFactory.GetInstance().Get<Product>();
+
+            int productId = 0;
+
+            int.TryParse(id, out productId);
+
+            return productBO.SelectById(productId);
         }
 
         public Product PostProduct(Product product)
         {
-            return new ProductBusiness().Save(product);
+            var productBO = (ProductBusiness)BusinessFactory.GetInstance().Get<Product>();
+
+            return productBO.Save(product);
         }
 
         public Transaction PostTransaction(Transaction transaction)
         {
-            return new TransactionBusiness().Save(transaction);
+            var transactionBO = (TransactionBusiness)BusinessFactory.GetInstance().Get<Transaction>();
+
+            return transactionBO.Save(transaction);
         }
     }
 }

@@ -8,27 +8,29 @@ using System.Threading.Tasks;
 
 namespace LojaDesafio.Business
 {
-    public class ProductBusiness
+    public class ProductBusiness : GenericBusiness<Product>
     {
+        public ProductBusiness(Context context) : base(context) { }
+
         public IList<Product> Select()
         {
-            using (var db = new Context())
+            using (this.Context)
             {
-                return db.Products.ToList();
+                return this.Context.Products.ToList();
             }
         }
 
         public Product SelectById(int id)
         {
-            using (var db = new Context())
+            using (this.Context)
             {
-                return db.Products.FirstOrDefault(p => p.Id == id);
+                return this.Context.Products.FirstOrDefault(p => p.Id == id);
             }
         }
 
         public Product Save(Product product)
         {
-            using (var db = new Context())
+            using (this.Context)
             {
                 if (product.Id > 0)
                 {
@@ -40,10 +42,10 @@ namespace LojaDesafio.Business
                 }
                 else
                 {
-                    db.Products.Add(product);
+                    this.Context.Products.Add(product);
                 }
 
-                db.SaveChanges();
+                this.Context.SaveChanges();
             }
 
             return product;

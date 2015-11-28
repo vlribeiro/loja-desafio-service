@@ -1,4 +1,5 @@
 ﻿using LojaDesafio.Model;
+using LojaDesafio.Model.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace LojaDesafio.Business
 {
-    public class CreditCardBusiness
+    public class CreditCardBusiness : GenericBusiness<CreditCard>
     {
+        public CreditCardBusiness(Context context) : base(context) { }
+
+
         public void Validate(CreditCard creditcard)
         {
             List<string> errors = new List<string>();

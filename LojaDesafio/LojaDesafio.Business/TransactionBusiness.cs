@@ -1,4 +1,5 @@
-﻿using LojaDesafio.Model;
+﻿using LojaDesafio.Business.Infrastructure;
+using LojaDesafio.Model;
 using LojaDesafio.Model.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -8,27 +9,19 @@ using System.Threading.Tasks;
 
 namespace LojaDesafio.Business
 {
-    public class TransactionBusiness
+    public class TransactionBusiness : GenericBusiness<Transaction>
     {
+        public TransactionBusiness(Context context) : base(context) { }
+
         public Transaction Save(Transaction transaction)
         {
-            using (var db = new Context())
+            using (this.Context)
             {
-                //db.Transactions.
-                //if (product.Id > 0)
-                //{
-                //    var existingProduct = this.SelectById(product.Id);
+                this.Validate(transaction);
 
-                //    existingProduct.Description = product.Description;
-                //    existingProduct.Name = product.Name;
-                //    existingProduct.Price = product.Price;
-                //}
-                //else
-                //{
-                //    db.Products.Add(product);
-                //}
+                this.Context.Transactions.Add(transaction);
 
-                //db.SaveChanges();
+                this.Context.SaveChanges();
             }
 
             return transaction;
@@ -46,7 +39,9 @@ namespace LojaDesafio.Business
             {
                 try
                 {
-                    new CreditCardBusiness().Validate(transaction.CreditCard);
+                    CreditCardBusiness creditCardBO = (CreditCardBusiness)BusinessFactory.GetInstance().Get<CreditCard>(this.Context);
+
+                    creditCardBO.Validate(transaction.CreditCard);
                 }
                 catch (ValidationException e)
                 {
@@ -65,10 +60,12 @@ namespace LojaDesafio.Business
                     errors.Add("Invalid product quantity in transaction.");
                 }
 
-                if (transaction.TransactionProducts.Count(tp => tp.Product.Id <= 0) > 0)
-                {
-                    errors.Add("Invalid product in transaction.");
-                }
+                //ProductBusiness pbo = (ProductBusiness)BusinessFactory.GetInstance().Get<Product>(this.Context);
+
+                //if (transaction.TransactionProducts.Count(tp => pbo.SelectById(tp.ProductId) == null) == 0)
+                //{
+                //    errors.Add("Invalid product in transaction.");
+                //}
             }
 
             if (errors.Count > 0)

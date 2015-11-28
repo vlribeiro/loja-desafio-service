@@ -21,6 +21,8 @@ namespace LojaDesafio.Model.Infrastructure
 
         public DbSet<CreditCard> CreditCards { get; set; }
 
+        public DbSet<TransactionProduct> TransactionProducts { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasKey(p => p.Id);
@@ -29,6 +31,10 @@ namespace LojaDesafio.Model.Infrastructure
             modelBuilder.Entity<Transaction>().HasRequired(t => t.CreditCard);
 
             modelBuilder.Entity<CreditCard>().HasKey(c => c.Id);
+
+            modelBuilder.Entity<TransactionProduct>().HasKey(tp => tp.Id);
+            modelBuilder.Entity<TransactionProduct>().HasRequired(tp => tp.Transaction);
+            modelBuilder.Entity<TransactionProduct>().HasRequired(tp => tp.Product);
 
             base.OnModelCreating(modelBuilder);
         }

@@ -12,7 +12,6 @@ namespace LojaDesafio.Model
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-
-        public virtual ICollection<TransactionProduct> TransactionProducts { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

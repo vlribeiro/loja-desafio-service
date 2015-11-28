@@ -19,7 +19,7 @@ namespace LojaDesafio.Model
         {
             get
             {
-                return this.TransactionProducts.Sum(tp => tp.Quantity * tp.Product.Price);
+                return this.TransactionProducts != null && this.TransactionProducts.Count > 0 ? this.TransactionProducts.Sum(tp => tp.Quantity * (tp.Product != null ? tp.Product.Price : 0)) : 0;
             }
         }
 
